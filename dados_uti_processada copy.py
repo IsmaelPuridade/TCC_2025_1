@@ -1,7 +1,7 @@
 import pandas as pd
 
 # === 1. Carregar os dados ===
-df_uti = pd.read_csv("hospitais_com_uti.csv", dtype=str)
+df_uti = pd.read_csv("leitos_bahia.csv", dtype=str)
 df_municipios = pd.read_excel("dados_bahia_limpo.xlsx")
 
 # === 2. Corrigir tipos de dados numéricos nas colunas de leitos ===
@@ -38,5 +38,5 @@ df_final["classificacao"] = df_final["leitos_por_10000_hab"].apply(
 )
 
 # === 8. Exportar resultado para CSV ===
-df_final.to_csv("[10mil]dados_uti_bahia_processado.csv", index=False)
+df_final.to_csv("[10mil]dados_uti_bahia_processado_bahia.csv", index=False)
 print("✅ Dados processados e exportados com sucesso.")

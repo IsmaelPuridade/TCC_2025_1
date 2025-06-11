@@ -54,14 +54,14 @@ df_final["UTI_TOTAL_EXIST"] = df_final["UTI_TOTAL_EXIST"].fillna(0).astype(int)
 df_final["UTI_TOTAL_SUS"] = df_final["UTI_TOTAL_SUS"].fillna(0).astype(int)
 
 # -----------------------------
-# 🔹 ETAPA 4 - CALCULAR LEITOS POR 1000 HABITANTES
+# 🔹 ETAPA 4 - CALCULAR LEITOS POR 10000 HABITANTES
 # -----------------------------
-df_final['LEITOS_UTI_POR_1000_HAB'] = (df_final["UTI_TOTAL_EXIST"] / df_final["POPULACAO_2024"]) * 1000
-df_final['LEITOS_UTI_POR_1000_HAB'] = df_final['LEITOS_UTI_POR_1000_HAB'].round(2)
+df_final['LEITOS_UTI_POR_10000_HAB'] = (df_final["UTI_TOTAL_EXIST"] / df_final["POPULACAO_2024"]) * 10000
+df_final['LEITOS_UTI_POR_10000_HAB'] = df_final['LEITOS_UTI_POR_10000_HAB'].round(2)
 
 # Exibir alguns resultados
-print(df_final[["MUNICIPIO", "POPULACAO_2024", "UTI_TOTAL_EXIST", "LEITOS_UTI_POR_1000_HAB"]].sort_values(by="LEITOS_UTI_POR_1000_HAB", ascending=False))
+print(df_final[["MUNICIPIO", "POPULACAO_2024", "UTI_TOTAL_EXIST", "LEITOS_UTI_POR_10000_HAB"]].sort_values(by="LEITOS_UTI_POR_10000_HAB", ascending=False))
 
 # Salvar resultado
 df_final.to_csv("analise_leitos_uti_por_municipio.csv", index=False)
-print("✅ Arquivo salvo: analise_leitos_uti_por_municipio.csv")
+print("✅ Arquivo salvo: [10mil]analise_leitos_uti_por_municipio.csv")

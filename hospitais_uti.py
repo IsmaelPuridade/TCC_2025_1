@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 1. Especificar o caminho do arquivo CSV
-caminho_arquivo_csv = "leitos_bahia.csv"  # Substitua pelo caminho correto
+caminho_arquivo_csv = "leitos_bahia.csv"  
 
 # 2. Tentar ler o arquivo CSV com diferentes codificações
 try:
